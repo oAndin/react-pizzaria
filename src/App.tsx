@@ -3,7 +3,7 @@ import Ways from "./Routes"
 const App = () => {
   return (
     <>
-      <Ways />
+    <Ways />
     </>
   );
 };

@@ -1,14 +1,12 @@
+import { ShoppingCart } from "@phosphor-icons/react";
+import { useState } from "react";
 import { styled } from "styled-components";
 
-import {BiCartAdd} from 'react-icons/bi';
-
-import {useState} from 'react';
 
 const Header = () => {
 
     const [cartVisible, setCartVisible] = useState<boolean>(false);
 
-    setCartVisible(false);
 
     return (
         <>
@@ -29,12 +27,11 @@ const Header = () => {
                 </HeaderActions>
                 <HeaderActions>
                 <HeaderBTN href="/login">Entrar</HeaderBTN>
-                < BiCartAdd
+                < ShoppingCart
                 size={24} 
                 className="icon"
-                onClick={()=> {setCartVisible(!true)}}
-                />
-                <HeaderCart className={cartVisible ? ".active" : ""}/> 
+                onClick={()=> {setCartVisible(!cartVisible)}}/>
+                <HeaderCart className={cartVisible ? "active" : ""}/> 
                 </HeaderActions>
             </HeaderCointainer>
         </>
@@ -61,6 +58,8 @@ const HeaderActions = styled.div`
     align-items: center;
     gap: 16px;
     position: relative;
+
+    
 `;
 
 const HeaderBTN = styled.a`
@@ -82,13 +81,7 @@ const HeaderBTN = styled.a`
         color: #fff;
     }
 
-    & icon {
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #fff;
-    }
+
 `;
 
 const HeaderMenu = styled.ul`
@@ -100,7 +93,7 @@ const HeaderMenu = styled.ul`
         color: #fff;
         line-height: 40px;
         display: block;
-        transition: 0.5s ease-in-out    ;
+        transition: 0.5s ease-in-out;
 
         &:hover {
             cursor: pointer;

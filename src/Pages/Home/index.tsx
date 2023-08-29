@@ -1,8 +1,9 @@
+import Pesquisa from "../../components/Pesquisa";
 
 const Home = () => {
     return (
         <>
-            <h1>HOME</h1>
+            <Pesquisa></Pesquisa>
         </>
     );
 };
